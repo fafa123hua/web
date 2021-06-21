@@ -1,16 +1,20 @@
 <template>
   <div class="home">
-    <Carousel msg="Welcome to Your Vue.js App"/>
+    <ms-carousel msg="Welcome to Your Vue.js App" />
+    <ms-echarts msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import Carousel from '@/components/Carousel.vue'
+import Carousel from "@/components/Carousel.vue";
+import Echarts from "@/components/Echarts.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    Carousel
-  }
-}
+    msCarousel: Carousel,
+    msEcharts: Echarts,
+  },
+};
 </script>
+

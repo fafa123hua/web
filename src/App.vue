@@ -22,8 +22,9 @@
           src="./assets/img/mod_close.png"
         />
         <div class="nav_mod" v-if="!is_close">
-          <router-link class="mod_a" to="/">主页</router-link><br /><br><br>
-          <router-link class="mod_a" to="/query">查询</router-link><br /><br><br>
+          <router-link class="mod_a" to="/">主页</router-link><br /><br /><br />
+          <router-link class="mod_a" to="/query">查询</router-link
+          ><br /><br /><br />
           <router-link class="mod_a" to="/update">修改</router-link>
         </div>
       </div>
@@ -57,11 +58,13 @@ export default {
 }
 // 导航栏
 #nav {
+  position: relative;
   padding: 10px;
   margin: 0;
   width: 100%;
   height: 40px;
   box-shadow: 0 1px 40px -8px rgba(223, 217, 217, 0.5);
+  z-index: 999999;
   text-align: right;
   box-sizing: border-box;
 
@@ -73,7 +76,6 @@ export default {
     font-weight: 700;
     cursor: pointer;
   }
-
   // 移动端样式
   .mod {
     position: absolute;
@@ -143,7 +145,6 @@ export default {
       }
     }
   }
-
   // 隐藏移动端
   .mod {
     display: none;
