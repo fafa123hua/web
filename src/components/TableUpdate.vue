@@ -14,7 +14,7 @@
       </el-table-column>
       <el-table-column prop="English" label="英语" min-width="60">
       </el-table-column>
-      <el-table-column fixed="right" label="操作"  width="outo" min-width="100" >
+      <el-table-column fixed="right" label="操作" width="outo" min-width="100">
         <template slot-scope="scope">
           <el-button
             @click.native.prevent="deleteRow(scope.$index, tableData)"
@@ -39,7 +39,7 @@
 <script>
 export default {
   methods: {
-    // 筛选
+    // 搜索筛选
     filterData() {
       return this.tableData.filter((data) => {
         return (
@@ -53,8 +53,27 @@ export default {
         );
       });
     },
+    // 删除事件
     deleteRow(index, rows) {
-      rows.splice(index, 1);
+      this.$confirm("此操作将永久删除该文件, 是否继续?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning",
+        center: true,
+        roundButton: true,
+      })
+        .then(() => {
+          this.$message({
+            type: "success",
+            message: "删除成功!",
+          });
+        })
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "已取消删除",
+          });
+        });
     },
   },
   data() {

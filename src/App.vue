@@ -209,4 +209,14 @@ export default {
     }
   }
 }
+// 弹窗样式
+.el-message-box {
+  max-width: 270px !important;
+}
+
+// backtop样式调整
+.el-backtop{
+  width: 25px!important;
+  height: 25px!important;
+}
 </style>

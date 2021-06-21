@@ -1,17 +1,15 @@
 <template>
-  <el-backtop :bottom="40">
-    <div class="backtop">UP</div>
+  <el-backtop :bottom="45" :right="20" :visibility-height="20">
+  <div class="backtop">up</div>
   </el-backtop>
 </template>
 
 <style lang="less">
-.backtop {
-  height: 100%;
+.backtop{
   width: 100%;
-  background-color: #f2f5f6;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.42);
+  height: 100%;
+  font-size: 14px;
+  line-height: 25px;
   text-align: center;
-  line-height: 40px;
-  color: blueviolet;
 }
 </style>
