@@ -68,7 +68,7 @@ export default {
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: 70%;
   height: 30%;
   z-index: -1;
   // 图片变化

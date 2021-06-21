@@ -24,7 +24,7 @@
             移除
           </el-button>
           <el-button
-            @click.native.prevent="deleteRow(scope.$index, tableData)"
+            @click.native.prevent="changeRow(scope.$index, tableData)"
             type="text"
             size="small"
           >
@@ -33,6 +33,32 @@
         </template>
       </el-table-column>
     </el-table>
+    <el-dialog
+      title="修改"
+      :visible.sync="dialogVisible"
+      width="50%"
+      :before-close="handleClose"
+    >
+      <span>学期</span>
+      <el-input v-model="asd" ></el-input>
+      <span>姓名</span>
+      <el-input></el-input>
+      <span>学号</span>
+      <el-input></el-input>
+      <span>数学</span>
+      <el-input></el-input>
+      <span>语文</span>
+      <el-input></el-input>
+      <span>英语</span>
+      <el-input></el-input>
+
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false"
+          >确 定</el-button
+        >
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -75,9 +101,14 @@ export default {
           });
         });
     },
+    // 修改事件
+    changeRow(index, rows) {
+      this.dialogVisible = !this.dialogVisible;
+    },
   },
   data() {
     return {
+      dialogVisible: false,
       search: "",
       tableData: [
         {

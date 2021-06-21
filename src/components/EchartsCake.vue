@@ -65,8 +65,5 @@ export default {
 };
 </script>
 <style>
-.my-chart {
-  width: 800px;
-  height: 500px;
-}
+
 </style>
