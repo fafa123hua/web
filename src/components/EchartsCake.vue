@@ -17,7 +17,7 @@ export default {
         const myChart = this.$myecharts.init(chart);
         const option = {
           title: {
-            text: "某站点用户访问来源",
+            text: "优秀表",
             subtext: "纯属虚构",
             left: "center",
           },
@@ -30,15 +30,15 @@ export default {
           },
           series: [
             {
-              name: "访问来源",
+              name: "总分",
               type: "pie",
               radius: "50%",
               data: [
-                { value: 1048, name: "搜索引擎" },
-                { value: 735, name: "直接访问" },
-                { value: 580, name: "邮件营销" },
-                { value: 484, name: "联盟广告" },
-                { value: 300, name: "视频广告" },
+                { value: 300, name: "王小帅" },
+                { value: 425, name: "王小天" },
+                { value: 580, name: "王小来" },
+                { value: 484, name: "王小飞" },
+                { value: 200, name: "王小虎" },
               ],
               emphasis: {
                 itemStyle: {

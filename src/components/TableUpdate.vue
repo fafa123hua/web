@@ -1,6 +1,8 @@
 <template>
   <div>
+    <!-- 搜索 -->
     <el-input v-model="search" size="mini" placeholder="输入关键字搜索" />
+    <!-- 表格 -->
     <el-table :data="filterData()" style="width: 100%" max-height="750">
       <el-table-column fixed prop="date" label="学期" min-width="100">
       </el-table-column>
@@ -33,14 +35,10 @@
         </template>
       </el-table-column>
     </el-table>
-    <el-dialog
-      title="修改"
-      :visible.sync="dialogVisible"
-      width="50%"
-      :before-close="handleClose"
-    >
+    <!-- 修改弹窗 -->
+    <el-dialog title="修改" :visible.sync="changeVisible" width="60%">
       <span>学期</span>
-      <el-input v-model="asd" ></el-input>
+      <el-input></el-input>
       <span>姓名</span>
       <el-input></el-input>
       <span>学号</span>
@@ -51,15 +49,15 @@
       <el-input></el-input>
       <span>英语</span>
       <el-input></el-input>
-
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogVisible = false"
+        <el-button @click="changeVisible = false">取 消</el-button>
+        <el-button type="primary" @click="changeVisible = false"
           >确 定</el-button
         >
       </span>
     </el-dialog>
   </div>
+  
 </template>
 
 <script>
@@ -103,12 +101,12 @@ export default {
     },
     // 修改事件
     changeRow(index, rows) {
-      this.dialogVisible = !this.dialogVisible;
+      this.changeVisible = !this.changeVisible;
     },
   },
   data() {
     return {
-      dialogVisible: false,
+      changeVisible: false,
       search: "",
       tableData: [
         {
@@ -228,3 +226,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.addTable {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+</style>

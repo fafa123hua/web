@@ -70,7 +70,7 @@ export default {
   transform: translateX(-50%);
   width: 70%;
   height: 30%;
-  z-index: -1;
+  z-index: 1;
   // 图片变化
   img {
     position: absolute;
