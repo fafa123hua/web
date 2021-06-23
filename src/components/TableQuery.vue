@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   methods: {
@@ -39,15 +39,16 @@ export default {
     },
   },
   created() {
-    axios.get('http://121.36.10.13:50000/api/student')
-      .then(result => {
-        result = JSON.parse(JSON.stringify(result))
+    axios
+      .get("http://121.36.10.13:50000/api/student")
+      .then((result) => {
+        result = JSON.parse(JSON.stringify(result));
         this.tableData = result.data.data;
-        console.log(result.data)
+        console.log(result.data);
       })
-      .cathch(error => {
-        console.log(error)
-      })
+      .cathch((error) => {
+        console.log(error);
+      });
   },
   data() {
     return {

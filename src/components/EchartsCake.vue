@@ -28,6 +28,7 @@ export default {
             orient: "vertical",
             left: "left",
           },
+          // 数据库成绩数据重复太多，图展现不好，这里就采用的是固定的数据，为了展示较好的效果
           series: [
             {
               name: "总分",
